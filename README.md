@@ -4,10 +4,10 @@
 Before you start, please make sure you have [ffmpeg](https://ffmpeg.org/download.html) install and added into your device PATHS
 First, clone this repository with the command:
 
-```
-git clone https://github.com/Kaiz404/bad-apple.git
-pip install -r requirements.txt
-```
+```git clone https://github.com/Kaiz404/bad-apple.git```
+
+install python modules:
+```pip install -r requirements.txt```
 
 Open command prompt within the empty "frames" directory then run the following command to extract all frames from the music video:
 
