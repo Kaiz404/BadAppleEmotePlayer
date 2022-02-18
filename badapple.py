@@ -19,13 +19,13 @@ black = Image.open("black.png").resize(size=emote_size)
 
 
 
-for file in tqdm(glob.glob("*.png"), desc="Processing frames...", unit="frames"):
+for frame in tqdm(glob.glob("*.png"), desc="Processing frames...", unit="frames"):
 
-    os.chdir("../frames15")
+    os.chdir("../frames")
 
     processed_frame = Image.new('RGB', (frame_w*emote_w, frame_h*emote_h))
     
-    with PIL.Image.open(file) as img:
+    with PIL.Image.open(frame) as img:
         monochrome_img = img.convert(mode="1")
         modified_img = monochrome_img.resize(size=(frame_w, frame_h))
 
@@ -42,24 +42,16 @@ for file in tqdm(glob.glob("*.png"), desc="Processing frames...", unit="frames")
 
             processed_frame.paste(im=result, box=(0,y*emote_h))
 
-        try:
-            os.chdir("../outputframes")
-        except FileNotFoundError:
-            os.makedir("../outputframes")
-            os.chdir("../outputframes")
+        os.chdir("../outputframes")
 
-        processed_frame.save(fp="file.png")
+        processed_frame.save(fp=f"{frame}.png")
 
 
-ffmpeg.input('%04d.png', framerate=15).output('output.mp4').overwrite_output().run()
+ffmpeg.input('%04d.png', framerate=30).output('output.mp4').overwrite_output().run()
 
-try:
-    os.chdir("../result")
-except FileNotFoundError:
-    os.mkdir("../results")
-    os.chdir("../results")
+os.chdir("../result")
 
-input_video = ffmpeg.input("output.mp4")
+input_video = ffmpeg.input("../outputframes/output.mp4")
 input_audio = ffmpeg.input("../audio.aac")
 
-ffmpeg.concat(input_video, input_audio, v=1, a=1).output('testbadapple.mp4').run()
+ffmpeg.concat(input_video, input_audio, v=1, a=1).output('result.mp4').run()
