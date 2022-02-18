@@ -3,14 +3,17 @@
 
 Before you start, please make sure you have [ffmpeg](https://ffmpeg.org/download.html) install and added into your device PATHS
 First, clone this repository with the command:
+
 ```git clone https://github.com/Kaiz404/bad-apple.git```
 
 Download the [bad apple music video](https://www.youtube.com/watch?v=UkgK8eUdpAo) with either youtube-dl or a website of your own choice then move the downloaded video into the bad apple directory.
 
-Open command prompt within the bad apple directory and run the command
+Open command prompt within the bad apple directory and run the command to extract audio from the mv:
+
 ```ffmpeg -i badapple.mp4 -vn -acodec copy audio.aac```
 
 cd into the empty "frames" directory then run the following command to extract all frames from the music video:
+
 ```ffmpeg -i ../badapple.mp4 -vf fps=30 %04d.png```
 
 ## The fun part
