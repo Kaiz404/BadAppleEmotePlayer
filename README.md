@@ -15,4 +15,8 @@ Open command prompt within the "frames" directory then run the following command
 ```ffmpeg -i ../badappleMV.mkv -vf fps=30 %04d.png```
 
 ## The fun part
-In the emotes folder add any emote or emoji you want to convert into a bad apple mv, then change the emote name in badapple.py(line 25-26) according to your desired emotes. You can also change the emote and frame dimensions if you wish to(line 12-13), just make sure its ratio is constant. Now run badapple.py and let your device do the rest, the final video can be found in the "results" directory
+In the emotes folder add any emote or emoji you want to convert into a bad apple mv, then change the emote name in badapple.py(line 25-26) according to your desired emotes. You can also change the emote and frame dimensions if you wish to(line 12-13), just make sure its ratio is constant. Now run badapple.py and let your device do the rest, the final video can be found in the "results" directory.
+
+
+## Source
+##### Original video [link](https://www.youtube.com/watch?v=UkgK8eUdpAo).
