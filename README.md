@@ -4,7 +4,7 @@
 Before you start, please make sure you have [ffmpeg](https://ffmpeg.org/download.html) installed and added into your device PATHS
 First, clone this repository with the command:
 
-```https://github.com/Kaiz404/BadAppleEmotePlayer.git```
+```git clone https://github.com/Kaiz404/BadAppleEmotePlayer.git```
 
 install python modules:
 
